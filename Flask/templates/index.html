@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>IPL</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            .card{
+                align-items: center;
+                margin-left: 20%;
+                margin-right: 20% ;
+                margin-top: 0%;
+                margin-bottom: 0%;
+                padding-top: 5%;
+                padding-left: 15%;
+                padding-right: 15%;
+                padding-bottom: 5%;
+                background-color: rgb(255, 255, 255);
+                
+            }
+            body{
+                margin: 0%;
+                background-color: rgb(221, 219, 219);
+            }
+            .colortag{
+                color: red; 
+                padding-left: 10%;
+
+            }
+            .heading{
+                background-color: white;
+                /* position: relative; */
+            }
+            *{
+                font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            }
+            .navbar{
+                position: relative;
+            }
+        </style>
+    </head>
+    <body>
+
+        
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">IPL Score Prediction</a>
+            </div>
+        
+  <p class="navbar-text">By Using Linear Regression with Flask</p>
+        </div>
+        </nav>
+
+
+        <div class="navbar">
+        <!-- <h3 align="center"><b>IPL Score</b> Prediction in Flask</h3> -->
+        </div>
+        <div class='card'>
+            <h3 align='center'>Enter the Details</h3>
+        <form method="POST" action="/predict">
+                <select class="form-control align-center" name="batting-team">
+                    <option value="none">--- Select a Batting team ---</option>
+                    <option value="Mumbai Indians">Mumbai Indians</option>
+                    <option value="Kolkata Knight Riders">Kolkata Knight Riders</option>
+                    <option value="Chennai Super Kings">Chennai Super Kings</option>
+                    <option value="Rajasthan Royals">Rajasthan Royals</option>
+                    <option value="Kings XI Punjab">Kings XI Punjab</option>
+                    <option value="Royal Challengers Bangalore">Royal Challengers Bangalore</option>
+                    <option value="Delhi Daredevils">Delhi Daredevils</option>
+                    <option value="Sunrisers Hyderabad">Sunrisers Hyderabad</option>
+                </select><br>
+                <select class="form-control align-center" name="bowling-team">
+                    <option value="none">--- Select a Bowling team ---</option>
+                    <option value="Mumbai Indians">Mumbai Indians</option>
+                    <option value="Kolkata Knight Riders">Kolkata Knight Riders</option>
+                    <option value="Chennai Super Kings">Chennai Super Kings</option>
+                    <option value="Rajasthan Royals">Rajasthan Royals</option>
+                    <option value="Kings XI Punjab">Kings XI Punjab</option>
+                    <option value="Royal Challengers Bangalore">Royal Challengers Bangalore</option>
+                    <option value="Delhi Daredevils">Delhi Daredevils</option>
+                    <option value="Sunrisers Hyderabad">Sunrisers Hyderabad</option>
+                </select><br>
+
+                <select class="form-control align-center" name="venue">
+                    <option value="none">--- Select the Match Venue ---</option>
+                    <option value="Eden Gardens">Eden Gardens</option>
+                    <option value="M Chinnaswamy Stadium">M Chinnaswamy Stadium</option>
+                    <option value="Feroz Shah Kotla">Feroz Shah Kotla</option>
+                    <option value="Wankhede Stadium">Wankhede Stadium</option>
+                    <option value="MA Chidambaram Stadium, Chepauk">MA Chidambaram Stadium, Chepauk</option>
+                    <option value="Punjab Cricket Association Stadium, Mohali">Punjab Cricket Association Stadium, Mohali</option>
+                    <option value="Sawai Mansingh Stadium">Sawai Mansingh Stadium</option>
+                    <option value="Rajiv Gandhi International Stadium, Uppal">Rajiv Gandhi International Stadium, Uppal</option>
+                    <option value="Sardar Patel Stadium, Motera">Sardar Patel Stadium, Motera</option>
+                    <option value="Kingsmead">Kingsmead</option>
+                    <option value="Brabourne Stadium">Brabourne Stadium</option>
+                    <option value="Punjab Cricket Association IS Bindra Stadium, Mohali">Punjab Cricket Association IS Bindra Stadium, Mohali</option>
+                    <option value="SuperSport Park">SuperSport Park</option>
+                    <option value="Dubai International Cricket Stadium">Dubai International Cricket Stadium</option>
+                    <option value="Himachal Pradesh Cricket Association Stadium">Himachal Pradesh Cricket Association Stadium</option>
+                    <option value="Sheikh Zayed Stadium">Sheikh Zayed Stadium</option>
+                    <option value="Sharjah Cricket Stadium">Sharjah Cricket Stadium</option>
+                    <option value="St George's Park">St George's Park</option>
+                    <option value="JSCA International Stadium Complex">JSCA International Stadium Complex</option>
+                    <option value="New Wanderers Stadium">New Wanderers Stadium</option>
+                    <option value="Dr. Y.S. Rajasekhara Reddy ACA-VDCA Cricket Stadium">Dr. Y.S. Rajasekhara Reddy ACA-VDCA Cricket Stadium</option>
+                    <option value="Shaheed Veer Narayan Singh International Stadium">Shaheed Veer Narayan Singh International Stadium</option>
+                    <option value="Dr DY Patil Sports Academy">Dr DY Patil Sports Academy</option>
+                    <option value="Maharashtra Cricket Association Stadium">Maharashtra Cricket Association Stadium</option>
+                    <option value="Newlands">Newlands</option>
+                    <option value="Barabati Stadium">Barabati Stadium</option>
+                    <option value="Holkar Cricket Stadium">Holkar Cricket Stadium</option>
+                    <option value="Buffalo Park">Buffalo Park</option>
+                    <option value="OUTsurance Oval">OUTsurance Oval</option>
+                    <option value="De Beers Diamond Oval">De Beers Diamond Oval</option>
+                    <option value="Subrata Roy Sahara Stadium">Subrata Roy Sahara Stadium</option>
+                </select><br>
+
+                <input class="form-control" type="text" name="overs" placeholder="Overs (>= 5.0) eg. 9.5"><br>
+                <input class="form-control" type="text" name="runs" placeholder="Runs eg. 100"><br>
+                <input class="form-control" type="text" name="wickets" placeholder="Wickets eg. 3"><br>
+                <input class="form-control" type="text" name="runs_in_prev_5" placeholder="Runs scored in previous 5 Overs eg. 52"><br>
+                <input class="form-control" type="text" name="wickets_in_prev_5" placeholder="Wickets taken in previous 5 Overs eg. 2"><br>
+                <input type="submit" class="btn btn-primary" value="Predict Score">
+            
+            </form>
+        </div>
+    </body>
+</html>
