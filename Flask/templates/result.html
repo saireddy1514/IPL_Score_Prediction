@@ -6,35 +6,65 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
         <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
             .card{
                 align-items: center;
-                margin: auto;
-                padding-left: 30%;
-                padding-right: 30%;
-                font-size: larger;
+                margin-left: 20%;
+                margin-right: 20% ;
+                margin-top: 0%;
+                margin-bottom: 0%;
+                padding-top: 5%;
+                padding-left: 10%;
+                padding-right: 10%;
+                padding-bottom: 5%;
+                background-color: rgb(255, 255, 255);
+                
             }
             body{
-                background-color: burlywood;
+                margin: 0%;
+                background-color: rgb(50,122,120);
             }
             .colortag{
-                color: red;
-                margin: auto;
+                color: red; 
                 padding-left: 10%;
 
+            }
+            .heading{
+                background-color: white;
+                /* position: relative; */
+            }
+            *{
+                font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            }
+            .navbar{
+                position: relative;
+            }
+            .navbar-text{
+                float: right;
             }
         </style>
     </head>
     <body>
-        <br>
-        <br>
-        <hr>
-        <h3 align="center"><b>IPL Score</b> Prediction in Flask</h3>
-        <h5 align="center">By Using Linear Regression</h5>
-        <hr>
-        <br> 
-        <br>
+
+        
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">IPL Score Prediction</a>
+            </div>
+        
+  <p class="navbar-text">D V S SAI REDDY</p>
+        </div>
+        </nav>
+
+
+        <div class="navbar">
+        </div>
         <div class='card'>
-                <p class='result-p'>The final predicted score (range): {{ lower_limit }} to {{ upper_limit }}</p>
+ <h2 class='result-p'>The final predicted score (range): {{ lower_limit }} to {{ upper_limit }}</h2>
         </div>
     </body>
 </html>

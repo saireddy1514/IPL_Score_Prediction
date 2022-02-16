@@ -25,7 +25,7 @@
             }
             body{
                 margin: 0%;
-                background-color: rgb(221, 219, 219);
+                background-color: rgb(50,122,120);
             }
             .colortag{
                 color: red; 
@@ -42,6 +42,9 @@
             .navbar{
                 position: relative;
             }
+            .navbar-text{
+                float: right;
+            }
         </style>
     </head>
     <body>
@@ -53,7 +56,7 @@
                 <a class="navbar-brand" href="/">IPL Score Prediction</a>
             </div>
         
-  <p class="navbar-text">By Using Linear Regression with Flask</p>
+  <p class="navbar-text">D V S SAI REDDY</p>
         </div>
         </nav>
 
@@ -62,7 +65,8 @@
         <!-- <h3 align="center"><b>IPL Score</b> Prediction in Flask</h3> -->
         </div>
         <div class='card'>
-            <h3 align='center'>Enter the Details</h3>
+            <h3 align='center'>Score Predictor</h3>
+            <marquee><p><b>Fill the Details and Know the Score🤩🤩</b></p></marquee>
         <form method="POST" action="/predict">
                 <select class="form-control align-center" name="batting-team">
                     <option value="none">--- Select a Batting team ---</option>
