@@ -132,4 +132,5 @@ def predict():
     return render_template('result.html', lower_limit = my_prediction-10, upper_limit = my_prediction+5)
         
 if __name__ =='__main__':
-    app.run()
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port, debug=True)
